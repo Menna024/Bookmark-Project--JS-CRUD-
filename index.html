@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bookmark</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 d-flex flex-column text-center">
+                    <h1>Bookmarker</h1>
+                    <hr class="horizontal-line-class mx-auto">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 main-title text-center">
+                    <h2>
+                        <span><i class="fa-solid fa-bookmark fs-4"></i></span>
+                        Bookmark Your Favourite Sites
+                        <span><i class="fa-solid fa-bookmark fs-4"></i></span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form id="myForm">
+                        <div class="form ">
+                            <div class="form-control border-0 my-2">
+                                <label for="siteName">
+                                    <span><i class="fa-solid fa-book"></i></span>
+                                    Site Name</label>
+                                <input type="text" class="form-control my-1" id="siteName" placeholder="Bookmark Name">
+                            </div>
+
+                            <div class="form-control border-0 my-2">
+                                <label for="siteUrl">
+                                    <span><i class="fa-solid fa-link"></i></span>
+                                    Site URL</label>
+                                <input type="url" class="form-control my-1" id="siteUrl" placeholder="Website URL">
+                            </div>
+                            <div class="submit-btn-div text-center my-5">
+                                <button onclick="InsertData()" class="btn btn-warning" id="submitBtn">Submit</button>
+                            </div>
+                            <hr class="horizontal-line-class mx-auto">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="container content-data">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Website Name</th>
+                            <th>Visit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

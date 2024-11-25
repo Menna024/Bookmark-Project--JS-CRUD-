@@ -1,0 +1,38 @@
+.horizontal-line-class
+{
+    width:90vw;
+    /*make the line dotted*/
+    border: 5px dotted black;
+    /*convert it into only one line of dots*/
+    border-bottom: none;
+}
+
+.main-title
+{
+    position: relative;
+}
+
+/* .main-title::before{
+    content: "\f02e";
+    font-family: FontAwesome; 
+    position: absolute;
+    top: 16%;
+    left: 18%;
+}
+
+.main-title::after{
+    content: "\f02e";
+    font-family: FontAwesome; 
+    position: absolute;
+    top: 19%;
+    left: 80%;
+} */
+
+.submit-btn-div button 
+{
+    background-color: #bb4120;
+    border: 0;
+    color: white;
+    padding: 2px 30px;
+}
+
