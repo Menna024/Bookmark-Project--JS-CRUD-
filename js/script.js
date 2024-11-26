@@ -5,20 +5,27 @@ var tableBody = document.getElementById("table-body");
 
 var bookmarkList = [];
 
-
 function InsertData() {
-    var bookmark = {
-        name: siteName.value,
-        url: siteUrl.value
+    var isURLValid = ValidateURL(siteUrl.value);
+
+    if (isURLValid) {
+        var bookmark = {
+            name: siteName.value,
+            url: siteUrl.value
+        }
+
+        console.log(bookmark);
+        bookmarkList.push(bookmark);
+        localStorage.setItem("bookmarkList", JSON.stringify(bookmarkList));
+        console.log(bookmarkList);
+
+        console.log(siteName, siteUrl, submitBtn);
+        DisplayData();
     }
-
-    console.log(bookmark);
-    bookmarkList.push(bookmark);
-    localStorage.setItem("bookmarkList", JSON.stringify(bookmarkList));
-    console.log(bookmarkList);
-
-    console.log(siteName, siteUrl, submitBtn);
-    DisplayData();
+    else
+    {
+        alert("Invalid URL");
+    }
 }
 
 
@@ -54,9 +61,7 @@ function DisplayData() {
     console.log(str);
 }
 
-
-function OpenURL(url) 
-{   //in new tab
+function OpenURL(url) {   //in new tab
     window.open(url, "_blank");
 }
 
@@ -64,4 +69,14 @@ function DeleteData(index) {
     bookmarkList.splice(index, 1);
     localStorage.setItem("bookmarkList", JSON.stringify(bookmarkList));
     DisplayData();
+}
+
+function ValidateURL(url) {
+    const urlPattern = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[a-zA-Z0-9-._~:/?#[\]@!$&'()*+,;=]*)?$/;
+
+    if (!urlPattern.test(url)) {
+        return false;
+    } else {
+        return true;
+    }
 }
