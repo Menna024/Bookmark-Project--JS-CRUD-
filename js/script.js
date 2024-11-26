@@ -72,7 +72,9 @@ function DeleteData(index) {
 }
 
 function ValidateURL(url) {
-    const urlPattern = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[a-zA-Z0-9-._~:/?#[\]@!$&'()*+,;=]*)?$/;
+    // const urlPattern = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[a-zA-Z0-9-._~:/?#[\]@!$&'()*+,;=]*)?$/;
+    const urlPattern = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}\.com(\/[a-zA-Z0-9-._~:/?#[\]@!$&'()*+,;=]*)?$/;
+
 
     if (!urlPattern.test(url)) {
         return false;
